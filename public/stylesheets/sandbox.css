@@ -5,6 +5,7 @@
 * 2. Prevent iOS text size adjust after orientation change, without disabling
 *    user zoom.
 */
+@import url("https://fonts.googleapis.com/css?family=ABeeZee");
 html {
   font-family: sans-serif;
   /* 1 */
@@ -275,7 +276,7 @@ td,
 th {
   padding: 0; }
 
-/* 4. Base */
+/* 2. Base */
 /*
 
 Global
@@ -291,7 +292,7 @@ General fonts and other global styles of the page.
 
 html {
   box-sizing: border-box;
-  font-family: "PT Sans", sans-serif;
+  font-family: 'ABeeZee', sans-serif;
   font-size: 62.5%;
   line-height: 1.5;
   position: relative; }
@@ -302,7 +303,6 @@ body {
   height: 100%; }
 
 body {
-  background: #eee;
   overflow-x: hidden; }
 
 /*
@@ -364,3 +364,96 @@ Reset default styles on paragraphs.
 */
 p {
   margin-top: 0; }
+
+/* 3. Helper */
+.text-center {
+  text-align: center; }
+
+/* 4. Object */
+svg {
+  fill: gray; }
+
+.btn {
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border: 0;
+  outline: none; }
+
+.button-holder {
+  margin-bottom: 70px; }
+
+.btn-grades {
+  padding: 20px 40px;
+  border: 1px solid gray;
+  border-radius: 40px;
+  color: gray;
+  font-size: 40px;
+  width: 100%; }
+  @media only screen and (min-width: 600px) {
+    .btn-grades {
+      width: auto; } }
+
+.Forecast-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 50px; }
+
+.Forecast-menu-item {
+  font-size: 24px;
+  color: gray; }
+
+.is-clicked .Grades-celsius {
+  display: block; }
+
+.is-clicked .Grades-farenheit {
+  display: none; }
+
+.Container-narrow {
+  width: 600px;
+  margin: auto; }
+
+.Localization {
+  color: gray;
+  margin-bottom: 50px;
+  font-size: 50px; }
+  @media only screen and (min-width: 600px) {
+    .Localization {
+      font-size: 70px; } }
+
+.Main-content {
+  position: relative;
+  margin-bottom: 50px; }
+
+.Main-content-temperature {
+  font-size: 40px;
+  margin-bottom: 20px;
+  position: absolute;
+  top: 40%;
+  left: 20%;
+  font-weight: bold;
+  color: gray; }
+  @media only screen and (min-width: 600px) {
+    .Main-content-temperature {
+      font-size: 70px; } }
+
+.Grades-celsius {
+  display: none; }
+
+.Acreditation {
+  color: gray;
+  font-size: 16px; }
+  .Acreditation a {
+    color: gray;
+    text-decoration: none; }
+    .Acreditation a:hover {
+      text-decoration: underline; }
+
+.Content {
+  background-image: url("https://www.dropbox.com/s/isjy1pwqj0s7uel/2279.jpg?dl=1");
+  background-size: cover;
+  padding: 40px; }

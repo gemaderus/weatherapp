@@ -2,7 +2,7 @@
 
 @import "sandbox/base/normalize";
 
-/* 4. Base */
+/* 2. Base */
 
 @import "sandbox/base/global";
 @import "sandbox/base/lists";
@@ -10,3 +10,21 @@
 @import "sandbox/base/links";
 @import "sandbox/base/label";
 @import "sandbox/base/paragraphs";
+
+
+/* 3. Helper */
+
+@import "sandbox/helper/align";
+
+/* 4. Object */
+
+@import "sandbox/objects/svg";
+@import "sandbox/objects/buttons";
+@import "sandbox/objects/forecast";
+@import "sandbox/objects/is-clicked";
+@import "sandbox/objects/container";
+@import "sandbox/objects/localization";
+@import "sandbox/objects/main-content";
+@import "sandbox/objects/grades";
+@import "sandbox/objects/acreditation";
+@import "sandbox/objects/content";

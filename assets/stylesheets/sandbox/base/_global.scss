@@ -7,6 +7,8 @@ General fonts and other global styles of the page.
 
 */
 
+@import url('https://fonts.googleapis.com/css?family=ABeeZee');
+
 *,
 *:before,
 *:after {
@@ -16,7 +18,7 @@ General fonts and other global styles of the page.
 html {
   // -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  font-family: "PT Sans", sans-serif;
+  font-family: 'ABeeZee', sans-serif;
   font-size: 62.5%;
   line-height: 1.5;
   position: relative;
@@ -29,6 +31,5 @@ body {
 }
 
 body {
-  background: #eee;
   overflow-x: hidden;
 }

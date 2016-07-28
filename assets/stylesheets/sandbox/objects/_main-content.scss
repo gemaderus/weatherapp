@@ -1,0 +1,18 @@
+.Main-content {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.Main-content-temperature {
+  font-size: 40px;
+  margin-bottom: 20px;
+  position: absolute;
+  top: 40%;
+  left: 20%;
+  font-weight: bold;
+  color: gray;
+
+  @media only screen and (min-width: 600px) {
+    font-size: 70px;
+  }
+}
