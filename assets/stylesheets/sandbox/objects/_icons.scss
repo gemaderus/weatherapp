@@ -1,0 +1,32 @@
+.Icon-weather {
+  display: block;
+  background-repeat: no-repeat;
+}
+
+.Clear-sky {
+  background-image: url(../../images/sunny.svg);
+}
+
+.Few-clouds {
+  background-image: url(../../images/foggy.svg);
+}
+
+.Cloudy {
+  background-image: url(../../images/cloudy.svg);
+}
+
+.Rainy {
+  background-image: url(../../images/rainy.svg);
+}
+
+.Thunderstorm {
+  background-image: url(../../images/thunderstorm.svg);
+}
+
+.Snow {
+  background-image: url(../../images/snowing.svg);
+}
+
+.Mist {
+  background-image: url(../../images/mist.svg);
+}

@@ -369,7 +369,38 @@ p {
 .text-center {
   text-align: center; }
 
+.uppercase {
+  text-transform: uppercase; }
+
+.capitalize {
+  text-transform: capitalize; }
+
 /* 4. Object */
+.Header {
+  line-height: 1;
+  margin-bottom: 50px; }
+
+.Localization {
+  color: gray;
+  font-size: 50px; }
+  @media only screen and (min-width: 600px) {
+    .Localization {
+      font-size: 70px; } }
+
+.Temperature,
+.Weather-description {
+  font-size: 40px;
+  font-weight: bold;
+  color: gray; }
+  @media only screen and (min-width: 600px) {
+    .Temperature,
+    .Weather-description {
+      font-size: 60px; } }
+
+.Weather-description,
+.Localization {
+  margin-bottom: 30px; }
+
 svg {
   fill: gray; }
 
@@ -407,6 +438,15 @@ svg {
   font-size: 24px;
   color: gray; }
 
+.Forecast-day {
+  margin-bottom: 10px;
+  display: inline-block; }
+
+.Forecast-icon {
+  width: 55px;
+  height: 55px;
+  margin-bottom: 10px; }
+
 .is-clicked .Grades-celsius {
   display: block; }
 
@@ -414,32 +454,16 @@ svg {
   display: none; }
 
 .Container-narrow {
-  width: 600px;
+  max-width: 600px;
   margin: auto; }
 
-.Localization {
-  color: gray;
-  margin-bottom: 50px;
-  font-size: 50px; }
-  @media only screen and (min-width: 600px) {
-    .Localization {
-      font-size: 70px; } }
-
 .Main-content {
-  position: relative;
-  margin-bottom: 50px; }
+  margin-bottom: 50px;
+  position: relative; }
 
-.Main-content-temperature {
-  font-size: 40px;
-  margin-bottom: 20px;
-  position: absolute;
-  top: 40%;
-  left: 20%;
-  font-weight: bold;
-  color: gray; }
-  @media only screen and (min-width: 600px) {
-    .Main-content-temperature {
-      font-size: 70px; } }
+.Main-content-icon {
+  width: 600px;
+  height: 600px; }
 
 .Grades-celsius {
   display: none; }
@@ -457,3 +481,28 @@ svg {
   background-image: url("https://www.dropbox.com/s/isjy1pwqj0s7uel/2279.jpg?dl=1");
   background-size: cover;
   padding: 40px; }
+
+.Icon-weather {
+  display: block;
+  background-repeat: no-repeat; }
+
+.Clear-sky {
+  background-image: url(../../images/sunny.svg); }
+
+.Few-clouds {
+  background-image: url(../../images/foggy.svg); }
+
+.Cloudy {
+  background-image: url(../../images/cloudy.svg); }
+
+.Rainy {
+  background-image: url(../../images/rainy.svg); }
+
+.Thunderstorm {
+  background-image: url(../../images/thunderstorm.svg); }
+
+.Snow {
+  background-image: url(../../images/snowing.svg); }
+
+.Mist {
+  background-image: url(../../images/mist.svg); }

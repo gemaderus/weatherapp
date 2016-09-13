@@ -15,16 +15,19 @@
 /* 3. Helper */
 
 @import "sandbox/helper/align";
+@import "sandbox/helper/text-transform";
 
 /* 4. Object */
 
+@import "sandbox/objects/header";
 @import "sandbox/objects/svg";
 @import "sandbox/objects/buttons";
 @import "sandbox/objects/forecast";
 @import "sandbox/objects/is-clicked";
 @import "sandbox/objects/container";
-@import "sandbox/objects/localization";
 @import "sandbox/objects/main-content";
 @import "sandbox/objects/grades";
 @import "sandbox/objects/acreditation";
 @import "sandbox/objects/content";
+@import "sandbox/objects/icons";
+
