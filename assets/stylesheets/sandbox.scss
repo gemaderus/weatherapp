@@ -8,26 +8,17 @@
 @import "sandbox/base/lists";
 @import "sandbox/base/headings";
 @import "sandbox/base/links";
-@import "sandbox/base/label";
 @import "sandbox/base/paragraphs";
-
-
-/* 3. Helper */
-
-@import "sandbox/helper/align";
-@import "sandbox/helper/text-transform";
 
 /* 4. Object */
 
-@import "sandbox/objects/header";
-@import "sandbox/objects/svg";
+@import "sandbox/objects/main-content";
 @import "sandbox/objects/buttons";
 @import "sandbox/objects/forecast";
 @import "sandbox/objects/is-clicked";
 @import "sandbox/objects/container";
-@import "sandbox/objects/main-content";
 @import "sandbox/objects/grades";
 @import "sandbox/objects/acreditation";
 @import "sandbox/objects/content";
+@import "sandbox/objects/error.scss";
 @import "sandbox/objects/icons";
-

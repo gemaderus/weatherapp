@@ -5,7 +5,7 @@
 * 2. Prevent iOS text size adjust after orientation change, without disabling
 *    user zoom.
 */
-@import url("https://fonts.googleapis.com/css?family=ABeeZee");
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,600");
 html {
   font-family: sans-serif;
   /* 1 */
@@ -292,14 +292,13 @@ General fonts and other global styles of the page.
 
 html {
   box-sizing: border-box;
-  font-family: 'ABeeZee', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 62.5%;
   line-height: 1.5;
   position: relative; }
 
 html,
 body {
-  color: #444;
   height: 100%; }
 
 body {
@@ -327,7 +326,8 @@ h1, h2, h3, h4, h5, h6 headings styles.
 
 */
 h1, h2, h3, h4, h5, h6 {
-  margin: 0; }
+  margin: 0;
+  font-weight: 400; }
 
 /*
 
@@ -345,17 +345,6 @@ a {
 
 /*
 
-Label
------
-
-Label styles.
-
-*/
-label {
-  cursor: pointer; }
-
-/*
-
 Paragraph
 ---------
 
@@ -363,67 +352,64 @@ Reset default styles on paragraphs.
 
 */
 p {
-  margin-top: 0; }
-
-/* 3. Helper */
-.text-center {
-  text-align: center; }
-
-.uppercase {
-  text-transform: uppercase; }
-
-.capitalize {
-  text-transform: capitalize; }
+  margin: 0; }
 
 /* 4. Object */
-.Header {
+.Main-content {
   line-height: 1;
-  margin-bottom: 50px; }
+  margin-bottom: 50px;
+  text-align: center; }
 
 .Localization {
-  color: gray;
-  font-size: 50px; }
+  font-size: 20px; }
   @media only screen and (min-width: 600px) {
     .Localization {
-      font-size: 70px; } }
+      font-size: 40px; } }
 
-.Temperature,
-.Weather-description {
-  font-size: 40px;
-  font-weight: bold;
-  color: gray; }
+.Temperature {
+  font-size: 52px; }
   @media only screen and (min-width: 600px) {
-    .Temperature,
+    .Temperature {
+      font-size: 105px; } }
+
+.Weather-description {
+  font-size: 28px;
+  text-transform: capitalize; }
+  @media only screen and (min-width: 600px) {
     .Weather-description {
-      font-size: 60px; } }
+      font-size: 55px; } }
 
 .Weather-description,
-.Localization {
-  margin-bottom: 30px; }
-
-svg {
-  fill: gray; }
+.Localization,
+.Temperature {
+  margin-bottom: 20px; }
+  @media only screen and (min-width: 600px) {
+    .Weather-description,
+    .Localization,
+    .Temperature {
+      margin-bottom: 30px; } }
 
 .btn {
-  padding: 0;
-  margin: 0;
   background-color: transparent;
   border: 0;
-  outline: none; }
+  margin: 0;
+  outline: none;
+  padding: 0; }
 
 .button-holder {
-  margin-bottom: 70px; }
+  margin-bottom: 70px;
+  text-align: center; }
 
 .btn-grades {
-  padding: 20px 40px;
-  border: 1px solid gray;
+  background-color: #337e96;
   border-radius: 40px;
-  color: gray;
-  font-size: 40px;
-  width: 100%; }
-  @media only screen and (min-width: 600px) {
-    .btn-grades {
-      width: auto; } }
+  color: white;
+  font-size: 30px;
+  padding: 10px 30px;
+  -webkit-transition: background 0.6s;
+  transition: background 0.6s; }
+  .btn-grades:hover {
+    background-color: #2c6b80; }
 
 .Forecast-menu {
   display: -webkit-box;
@@ -436,16 +422,17 @@ svg {
 
 .Forecast-menu-item {
   font-size: 24px;
-  color: gray; }
+  text-align: center; }
 
 .Forecast-day {
-  margin-bottom: 10px;
-  display: inline-block; }
+  display: inline-block;
+  margin-bottom: 10px; }
 
 .Forecast-icon {
-  width: 55px;
-  height: 55px;
-  margin-bottom: 10px; }
+  display: block;
+  height: 48px;
+  margin-bottom: 10px;
+  width: 48px; }
 
 .is-clicked .Grades-celsius {
   display: block; }
@@ -454,43 +441,73 @@ svg {
   display: none; }
 
 .Container-narrow {
-  max-width: 600px;
-  margin: auto; }
-
-.Main-content {
-  margin-bottom: 50px;
-  position: relative; }
-
-.Main-content-icon {
-  width: 600px;
-  height: 600px; }
+  margin: auto;
+  max-width: 600px; }
 
 .Grades-celsius {
   display: none; }
 
 .Acreditation {
-  color: gray;
-  font-size: 16px; }
+  color: #245869;
+  font-size: 16px;
+  text-align: center; }
   .Acreditation a {
-    color: gray;
-    text-decoration: none; }
+    color: #245869;
+    text-decoration: underline; }
     .Acreditation a:hover {
-      text-decoration: underline; }
+      text-decoration: none; }
 
 .Content {
-  background-image: url("https://www.dropbox.com/s/isjy1pwqj0s7uel/2279.jpg?dl=1");
+  background-repeat: no-repeat;
   background-size: cover;
-  padding: 40px; }
+  color: #337e96;
+  padding: 40px 20px;
+  position: relative; }
+
+.Morning.Content {
+  background-image: url(../../images/morning.jpg); }
+
+.Evening.Content {
+  background-image: url(../../images/evening.jpg); }
+
+.Night.Content {
+  background-image: url(../../images/night.jpg); }
+
+.Error-message {
+  background-color: #337e96;
+  border-radius: 20px;
+  color: white;
+  display: none;
+  font-size: 30px;
+  left: 50%;
+  margin: auto;
+  padding: 44px;
+  position: absolute;
+  text-align: center;
+  top: 40%;
+  -webkit-transform: translate(-50%, -40%);
+          transform: translate(-50%, -40%);
+  width: 40%; }
 
 .Icon-weather {
-  display: block;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  margin-left: auto;
+  margin-right: auto; }
+
+.Icon-weather--main {
+  height: 150px;
+  max-width: 150px; }
+  @media only screen and (min-width: 600px) {
+    .Icon-weather--main {
+      height: 300px;
+      max-width: 300px; } }
+
+.Icon-error {
+  width: 100px;
+  height: 100px; }
 
 .Clear-sky {
   background-image: url(../../images/sunny.svg); }
-
-.Few-clouds {
-  background-image: url(../../images/foggy.svg); }
 
 .Cloudy {
   background-image: url(../../images/cloudy.svg); }
@@ -506,3 +523,9 @@ svg {
 
 .Mist {
   background-image: url(../../images/mist.svg); }
+
+.Drizzle {
+  background-image: url(../../images/drizzle.svg); }
+
+.Extreme {
+  background-image: url(../../images/air-sock.svg); }

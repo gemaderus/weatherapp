@@ -1,14 +1,26 @@
 .Icon-weather {
-  display: block;
   background-repeat: no-repeat;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Icon-weather--main {
+  height: 150px;
+  max-width: 150px;
+
+  @media only screen and (min-width: 600px) {
+    height: 300px;
+    max-width: 300px;
+  }
+}
+
+.Icon-error {
+  width: 100px;
+  height: 100px;
 }
 
 .Clear-sky {
   background-image: url(../../images/sunny.svg);
-}
-
-.Few-clouds {
-  background-image: url(../../images/foggy.svg);
 }
 
 .Cloudy {
@@ -29,4 +41,12 @@
 
 .Mist {
   background-image: url(../../images/mist.svg);
+}
+
+.Drizzle {
+  background-image: url(../../images/drizzle.svg);
+}
+
+.Extreme {
+  background-image: url(../../images/air-sock.svg);
 }

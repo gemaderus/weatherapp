@@ -6,16 +6,17 @@
 
 .Forecast-menu-item {
   font-size: 24px;
-  color: gray;
+  text-align: center;
 }
 
 .Forecast-day {
-  margin-bottom: 10px;
   display: inline-block;
+  margin-bottom: 10px;
 }
 
 .Forecast-icon {
-  width: 55px;
-  height: 55px;
+  display: block;
+  height: 48px;
   margin-bottom: 10px;
+  width: 48px;
 }

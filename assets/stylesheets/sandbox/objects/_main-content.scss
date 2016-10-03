@@ -1,9 +1,40 @@
 .Main-content {
+  line-height: 1;
   margin-bottom: 50px;
-  position: relative;
+  text-align: center;
 }
 
-.Main-content-icon {
-  width: 600px;
-  height: 600px;
+.Localization {
+  font-size: 20px;
+
+  @media only screen and (min-width: 600px) {
+    font-size: 40px;
+  }
+}
+
+.Temperature {
+  font-size: 52px;
+
+  @media only screen and (min-width: 600px) {
+    font-size: 105px;
+  }
+}
+
+.Weather-description {
+  font-size: 28px;
+  text-transform: capitalize;
+
+  @media only screen and (min-width: 600px) {
+    font-size: 55px;
+  }
+}
+
+.Weather-description,
+.Localization,
+.Temperature {
+  margin-bottom: 20px;
+
+  @media only screen and (min-width: 600px) {
+    margin-bottom: 30px;
+  }
 }

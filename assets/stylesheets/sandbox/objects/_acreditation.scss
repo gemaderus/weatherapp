@@ -1,13 +1,14 @@
 .Acreditation {
-  color: gray;
+  color: #245869;
   font-size: 16px;
+  text-align: center;
 
   a {
-    color: gray;
-    text-decoration: none;
+    color: #245869;
+    text-decoration: underline;
 
     &:hover {
-      text-decoration: underline;
+      text-decoration: none;
     }
   }
 }
