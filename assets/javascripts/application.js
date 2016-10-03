@@ -1,41 +1,33 @@
-var $ = require('jquery');
-
 //Estado
 var displayCelsius = true;
-var weatherDescriptions; //Almacenamos el valor de la Api
+var weatherDescriptions;
+
+//To click in the button
 
 function clicked(e) {
   displayCelsius = !displayCelsius;
-  $(".btn-grades").toggleClass("is-clicked");
+
+  document.getElementById("btnGrades").classList.toggle("is-clicked");
 
   renderTemperature(displayCelsius);
 };
 
-$(".btn-grades").on("click", clicked);
 
-//To get the localization
+document.getElementById("btnGrades").addEventListener("click", clicked);
 
-$(function() {
-  $.getJSON("http://ip-api.com/json", function(location) {
-  var latitude = location.lat;
-  var longitude = location.lon;
-  var url = "http://api.openweathermap.org/data/2.5/forecast/daily?cnt=6&units=metric&lat=" + latitude + "&lon=" + longitude + "&APPID=90785aafb1e217c4e92fdcaa6b7db53a"; //Location url.
-    forecast(url); //We need forecast url to update the datas.
-  }).fail(function(error){
-    $(".Error-message").css({display: "block"});
-  });
+document.addEventListener('DOMContentLoaded', function() {
+  ajaxCall("http://ip-api.com/json", forecast);
 });
 
 //To handle the function.
-//
+
 function handleResponse(response) {
   weatherDescriptions = response.list;
   updateCity(response.city);
   updateHour();
 
-  weatherDescriptions.forEach(function (weatherDescription, index) {//each recibe una función cuyo argumento es el índice y un elemento del DOM. Para hacer uso de jquery hay que convertirlo en un objeto jquery//
-    // weatherDescriptions es la lista entera y weatherDescription es cada elemento en cada iteración.
-    var nodo = $('#weather-'+index);
+  weatherDescriptions.forEach(function (weatherDescription, index) {
+    var nodo = document.getElementById('weather-'+index);
 
     if (index === 0) {
       updateDescription(nodo, weatherDescription);
@@ -48,76 +40,99 @@ function handleResponse(response) {
   });
 }
 
-//To get the forecast url
+function ajaxCall(url, callback) {
+  var xhr = new XMLHttpRequest();
+  var data;
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      data = JSON.parse(xhr.responseText);
+      callback(data);
+    } else if (xhr.readyState === 4 && xhr.status !== 200) {
+       document.getElementById("error").style.display= "block";
+    }
+  }
 
-function forecast(url) {
-  $.getJSON(url, handleResponse);
+  xhr.open("GET", url, true);
+  xhr.send();
+};
+
+function forecast(data) {
+  var latitude = data.lat;
+  var longitude = data.lon;
+  var url = "http://api.openweathermap.org/data/2.5/forecast/daily?cnt=6&units=metric&lat=" + latitude + "&lon=" + longitude + "&APPID=90785aafb1e217c4e92fdcaa6b7db53a"; //We need the url to the location.
+
+  ajaxCall(url, handleResponse);
 };
 
 //To update the description of the current day.
-
 function updateDescription(nodo, data) {
   var description = data.weather[0].description;
-  nodo.find(".Weather-description").html(description);
+  nodo.querySelector(".Weather-description").innerHTML = description;
 }
 
 //To update the City name.
-
 function updateCity(data) {
   var name = data.name;
-  var nodo = $('#city');
-  nodo.html(name);
+  var nodo = document.getElementById('city');
+  nodo.innerHTML= name;
 }
 
 //To update the days in the forecast.
 
 function updateDay(nodo, day) {
   var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-  var weekDay = new Date(day.dt * 1000).getDay(); //Tue Sep 13 2016 14:00:00 GMT+0200 (CEST)
-  nodo.find(".Forecast-day").html(days[weekDay]);
+  var weekDay = new Date(day.dt * 1000).getDay();
+  nodo.querySelector(".Forecast-day").innerHTML = days[weekDay];
 }
 
 //To update the icons depending of the day.
 
 function updateIcon(nodo, icon) {
-  var idIcon = icon.weather[0].id;//esto no me devuelve un número
+  var idIcon = icon.weather[0].id;
   var iconDigit = Math.round(idIcon / 100);
 
-  nodo.find(".Icon-weather").toggleClass("Thunderstorm", iconDigit === 2);
-  nodo.find(".Icon-weather").toggleClass("Drizzle", iconDigit === 3);
-  nodo.find(".Icon-weather").toggleClass("Rainy", iconDigit === 5);
-  nodo.find(".Icon-weather").toggleClass("Snow", iconDigit === 6);
-  nodo.find(".Icon-weather").toggleClass("Mist", iconDigit === 7);
-  nodo.find(".Icon-weather").toggleClass("Clear-sky", +idIcon === 800);
-  nodo.find(".Icon-weather").toggleClass("Cloudy", +idIcon > 800);
-  nodo.find(".Icon-weather").toggleClass("Extreme", iconDigit === 9);
-}
+  nodo.querySelectorAll(".Icon-weather").forEach(function (item, index, array) {
+    item.classList.toggle("Thunderstorm", iconDigit === 2);
+    item.classList.toggle("Drizzle", iconDigit === 3);
+    item.classList.toggle("Rainy", iconDigit === 5);
+    item.classList.toggle("Snow", iconDigit === 6);
+    item.classList.toggle("Mist", iconDigit === 7);
+    item.classList.toggle("Clear-sky", +idIcon === 800);
+    item.classList.toggle("Cloudy", +idIcon > 800);
+    item.classList.toggle("Extreme", iconDigit === 9);
+  });
+};
 
 // To change the celsius in farenheit and farenheit in celsius when the button is clicked.
 
 function updateTemperature(nodo, temperature, isCelsius) {
   var temp = temperature.temp.day;
-  if (isCelsius) {
-    temp = convertToGrades(temp);
-    nodo.find('.Grades-type').text("C");
-  } else {
-    temp = covertToFarenheit(temp);
-    nodo.find('.Grades-type').text("F");
-  }
-  nodo.find(".Grades").html(temp);
+  nodo.querySelectorAll('.Grades-type').forEach(function(item, index, array) {
+    if (isCelsius) {
+      temp = convertToGrades(temp);
+      item.textContent = "C";
+    } else {
+      temp = covertToFarenheit(temp);
+      item.textContent = "F";
+    }
+  });
+
+  nodo.querySelectorAll(".Grades").forEach(function(item, index, array) {
+    item.innerHTML = temp;
+  });
 }
 
 //We need the hour because the background image is changing with it.
 
 function updateHour() {
   var getHour = new Date().getHours();
-  var image = $(".Content");
+  var image = document.getElementById("content");
   if (getHour >= 6 && getHour <= 14) {
-    image.addClass("Morning");
+    image.classList.add("Morning");
   } else if (getHour > 14 && getHour < 20) {
-    image.addClass("Evening");
+    image.classList.add("Evening");
   } else {
-    image.addClass("Night");
+    image.classList.add("Night");
   }
 }
 
@@ -137,7 +152,7 @@ function convertToGrades(temp) {
 
 function renderTemperature(isCelsius) {
   weatherDescriptions.forEach(function (weatherDescription, index) {
-    var nodo = $('#weather-'+index);
+    var nodo = document.getElementById('weather-'+index);
     updateTemperature(nodo, weatherDescription, isCelsius);
   });
 }
