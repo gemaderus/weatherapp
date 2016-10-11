@@ -1,6 +1,10 @@
-# Origen
+# WeatherApp
 
-Sandbox tooling made with express, sass, grunt and love. Ready for Heroku deployment.
+App for geolocalization, gives you the temperature of the day and the weekly forecast. You can get the temperature in degrees Celsius and degrees celsius.
+
+I have developed this app for Free Code Camp, to get the certification for intermediate level frontend developer.
+
+WatherApp uses two apis: http://ip-api.com/json and http://api.openweathermap.org. It is made with jquery in the master branch and in Vanilla Javascript in js branch.
 
 ## Requirements
 
@@ -12,7 +16,7 @@ You'll need to have the following items installed before continuing.
 ## Quickstart
 
 ```bash
-git clone git@github.com:nobuti/origen.git
+git clone git@github.com:gemaderus/weatherapp.git
 npm install
 ```
 
@@ -21,16 +25,3 @@ While you're working on your project, run:
 `gulp`
 
 And you're set!
-
-## Directory Structure
-
-  * `assets/`: Assets files like images, javascripts or sass files.
-  * `public/`: Public assets, linked from views. Includes stylesheets and javascripts folders. The static html files are served from this directory.
-  * `views/`: Html views flawored as nunjucks files. Include partial and layout folders.
-  * `index.js`: Express file.
-  * `webpack.config.js`: Webpack config to bundle the js.
-  * `Gulpfile.js`: Gulp task runner.
-
-## Heroku support
-
-Add the remote branch in heroku and then `npm run deploy`.

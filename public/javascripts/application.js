@@ -110,6 +110,7 @@
 	  ajaxCall(url, handleResponse);
 	};
 
+
 	//To update the description of the current day.
 	function updateDescription(nodo, data) {
 	  var description = data.weather[0].description;
