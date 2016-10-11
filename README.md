@@ -1,6 +1,6 @@
 # WeatherApp
 
-App for geolocalization, gives you the temperature of the day and the weekly forecast. You can get the temperature in degrees Celsius and degrees celsius.
+App for geolocalization, gives you the temperature of the day and the weekly forecast. You can get the temperature in Celsius or Farenheit degrees.
 
 I have developed this app for Free Code Camp, to get the certification for intermediate level frontend developer.
 
