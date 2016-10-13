@@ -62,10 +62,10 @@
 	//To get the localization
 
 	$(function() {
-	  $.getJSON("http://ip-api.com/json", function(location) {
+	  $.getJSON("https://ip-api.com/json", function(location) {
 	  var latitude = location.lat;
 	  var longitude = location.lon;
-	  var url = "http://api.openweathermap.org/data/2.5/forecast/daily?cnt=6&units=metric&lat=" + latitude + "&lon=" + longitude + "&APPID=90785aafb1e217c4e92fdcaa6b7db53a"; //Location url.
+	  var url = "https://api.openweathermap.org/data/2.5/forecast/daily?cnt=6&units=metric&lat=" + latitude + "&lon=" + longitude + "&APPID=90785aafb1e217c4e92fdcaa6b7db53a"; //Location url.
 	    forecast(url); //We need forecast url to update the datas.
 	  }).fail(function(error){
 	    $(".Error-message").css({display: "block"});
